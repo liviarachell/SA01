@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Planejador de Projetos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h2>Planejador de projetos</h2>
+
+            <div class="actions">
+                <span>Entre em sua conta</span>
+                <button>Cadastre-se</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Faça o orçamento para seu projeto</h1>
+                <p>Calcule o valor que será utilizado em seu projeto.</p>
+                <button onclick="scrollToPlanner()">Começar</button>
+            </div>
+
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+                alt="Planejamento" width="589" height="393">
+        </section>
+
+        <section class="section" id="planner">
+            <h1>Planeje seu projeto</h1>
+
+            <div class="card">
+
+                <div class="input-group">
+                    <input id="taskName" placeholder="Nome da tarefa">
+                    <input id="taskHours" type="number" placeholder="Horas">
+                    <button class="add" onclick="addTask()">Adicionar</button>
+                </div>
+
+                <div class="table">
+                    <div class="table-header">
+                        <span>Tarefa</span>
+                        <span>Duração</span>
+                        <span>Valor</span>
+                    </div>
+
+                    <div id="taskList"></div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="hour-value">
+                    <span>Valor da sua hora (R$):</span>
+                    <input id="hourValue" type="number" oninput="updateTotal()">
+                </div>
+
+                <div class="total" id="total">
+                    Custo total do projeto: R$ 0,00
+                </div>
+
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
