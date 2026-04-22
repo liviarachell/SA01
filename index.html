@@ -1,73 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Planejador de Projetos</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Planejador de Projetos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-        <header>
-            <h2>Planejador de projetos</h2>
+<body>
 
-            <div class="actions">
-                <span>Entre em sua conta</span>
-                <button>Cadastre-se</button>
+<header>
+    <h2>Planejador de projetos</h2>
+
+    <div class="actions">
+        <span>Entre em sua conta</span>
+        <button>Cadastre-se</button>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Faça o orçamento para seu projeto</h1>
+        <p>Calcule o valor que será utilizado em seu projeto, para sua melhor organização.</p>
+        <button onclick="scrollToPlanner()">Começar</button>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+        alt="Planejamento">
+</section>
+
+<section class="section" id="planner">
+    <h1>Planeje seu projeto</h1>
+
+    <div class="card">
+
+        <div class="input-group">
+            <input id="taskName" placeholder="Nome da tarefa">
+            <input id="taskHours" type="number" placeholder="Horas">
+            <button class="add" onclick="addTask()">Adicionar</button>
+        </div>
+
+        <div class="table">
+            <div class="table-header">
+                <span>Tarefa</span>
+                <span>Duração</span>
+                <span>Valor</span>
             </div>
-        </header>
 
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Faça o orçamento para seu projeto</h1>
-                <p>Calcule o valor que será utilizado em seu projeto.</p>
-                <button onclick="scrollToPlanner()">Começar</button>
-            </div>
+            <div id="taskList"></div>
+        </div>
 
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-                alt="Planejamento" width="589" height="393">
-        </section>
+        <div class="divider"></div>
 
-        <section class="section" id="planner">
-            <h1>Planeje seu projeto</h1>
+        <div class="hour-value">
+            <span>Valor da sua hora (R$):</span>
+            <input id="hourValue" type="number" oninput="updateTotal()">
+        </div>
 
-            <div class="card">
+        <!-- NOVO CAMPO -->
+        <div class="urgency">
+            <span>Nível de urgência:</span>
+            <select id="urgency" onchange="updateTotal()">
+                <option value="1">Sem urgência</option>
+                <option value="1.2">Urgência (+20%)</option>
+                <option value="1.5">Muita urgência (+50%)</option>
+            </select>
+        </div>
 
-                <div class="input-group">
-                    <input id="taskName" placeholder="Nome da tarefa">
-                    <input id="taskHours" type="number" placeholder="Horas">
-                    <button class="add" onclick="addTask()">Adicionar</button>
-                </div>
+        <div class="total" id="total">
+            Custo total do projeto: R$ 0,00
+        </div>
 
-                <div class="table">
-                    <div class="table-header">
-                        <span>Tarefa</span>
-                        <span>Duração</span>
-                        <span>Valor</span>
-                    </div>
+    </div>
+</section>
 
-                    <div id="taskList"></div>
-                </div>
+<script src="script.js"></script>
 
-                <div class="divider"></div>
-
-                <div class="hour-value">
-                    <span>Valor da sua hora (R$):</span>
-                    <input id="hourValue" type="number" oninput="updateTotal()">
-                </div>
-
-                <div class="total" id="total">
-                    Custo total do projeto: R$ 0,00
-                </div>
-
-            </div>
-        </section>
-
-        <script src="script.js"></script>
-
-    </body>
+</body>
 </html>

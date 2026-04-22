@@ -8,85 +8,42 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #f8fafc;
     color: #1e293b;
-    line-height: 1.6;
 }
 
+/* HEADER */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
     background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-header h2 {
-    font-size: 1.2rem;
-    color: #4f46e5;
+    flex-wrap: wrap;
 }
 
 .actions {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.actions span {
-    font-size: 0.9rem;
-    color: #64748b;
-    cursor: pointer;
-}
-
-header button {
-    background: #4f46e5;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-header button:hover {
-    background: #4338ca;
-}
-
+/* HERO */
 .hero {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 4rem 5%;
-    max-width: 1200px;
-    margin: auto;
+    padding: 3rem 5%;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
-.hero-text {
+.hero img {
+    width: 100%;
     max-width: 500px;
+    border-radius: 10px;
 }
 
-.hero-text h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.hero-text p {
-    margin-bottom: 1.5rem;
-    color: #64748b;
-}
-
-.hero button {
-    background: #4f46e5;
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* Section */
+/* SECTION */
 .section {
-    padding: 4rem 5%;
+    padding: 3rem 5%;
     max-width: 900px;
     margin: auto;
 }
@@ -95,69 +52,170 @@ header button:hover {
     background: white;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-/* Inputs */
+/* INPUTS */
 .input-group {
     display: flex;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .input-group input {
     flex: 1;
     padding: 0.6rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
 }
 
 .add {
-    background: #22c55e;
+    background: #1800ad;
     color: white;
     border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 0.6rem;
 }
 
-/* Tabela */
+/* TABELA */
 .table-header,
 .task-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0.5rem 0;
 }
 
-.table-header {
-    font-weight: bold;
-    border-bottom: 1px solid #ddd;
-}
-
-.task-row {
-    border-bottom: 1px solid #eee;
-}
-
-/* Divider */
-.divider {
-    height: 1px;
-    background: #ddd;
-    margin: 1.5rem 0;
-}
-
-/* Hora */
-.hour-value {
+/* HORA */
+.hour-value,
+.urgency {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
-.hour-value input {
-    width: 100px;
+.urgency select {
+    padding: 0.4rem;
 }
 
-/* Total */
+/* TOTAL */
 .total {
-    font-size: 1.2rem;
+    margin-top: 1rem;
     font-weight: bold;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .hour-value,
+    .urgency {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-header,
+    .task-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CENTRALIZAÇÃO E RESPIRO GERAL */
+body {
+    background-color: #f1f5f9;
+}
+
+/* HERO MAIS EQUILIBRADO */
+.hero {
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 5rem 5%;
+}
+
+/* TEXTO MAIS LIMPO */
+.hero-text {
+    max-width: 450px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: #64748b;
+}
+
+/* BOTÃO MAIS BONITO */
+.hero button {
+    background: #4338ca;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #312e81;
+}
+
+/* IMAGEM AJUSTADA */
+.hero img {
+    max-width: 520px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* HEADER MAIS LIMPO */
+header {
+    padding: 1rem 6%;
+}
+
+/* SECTION MAIS CENTRALIZADA */
+.section {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.section h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* CARD MAIS MODERNO */
+.card {
+    max-width: 700px;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+/* INPUTS MAIS BONITOS */
+input, select {
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    padding: 0.6rem;
+}
+
+/* BOTÃO ADD */
+.add {
+    border-radius: 8px;
+}
+
+/* RESPONSIVO MAIS POLIDO */
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
 }

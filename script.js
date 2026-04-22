@@ -49,13 +49,17 @@ function renderTasks() {
 
 function updateTotal() {
     const hourValue = Number(document.getElementById("hourValue").value) || 0;
+    const urgency = Number(document.getElementById("urgency").value) || 1;
 
-    let total = tasks.reduce((acc, task) => acc + (task.hours * hourValue), 0);
+    let total = tasks.reduce((acc, task) => {
+        return acc + (task.hours * hourValue);
+    }, 0);
+
+    total = total * urgency;
 
     document.getElementById("total").innerText =
         "Custo total do projeto: R$ " + total.toFixed(2);
 }
 
-// Atualiza automaticamente ao mudar valor da hora
 document.getElementById("hourValue")
     .addEventListener("input", renderTasks);
